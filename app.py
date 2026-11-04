@@ -1,4 +1,5 @@
 import gradio as gr
+import os
 
 def my_tool(input_text: str) -> str:
     """Do something with input.
