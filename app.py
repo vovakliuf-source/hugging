@@ -14,4 +14,4 @@ def my_tool(input_text: str) -> str:
 demo = gr.Interface(fn=my_tool, inputs="text", outputs="text")
 
 if __name__ == "__main__":
-    demo.launch(mcp_server=True)
+    demo.launch(mcp_server=True, server_name="0.0.0.0", server_port=server_port)
