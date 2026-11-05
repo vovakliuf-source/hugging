@@ -1,5 +1,6 @@
 import gradio as gr
 import json
+import os
 
 def analyze_text(text: str) -> str:
     """Analyze text and return statistics.
@@ -116,4 +117,6 @@ with gr.Blocks(title="Text Processor") as demo:
         gr.Button("Check Level", size="lg").click(check_reading_level, text_input3, level_output)
 
 if __name__ == "__main__":
-    demo.launch(mcp_server=True)
+    # Get the port specified by Render (defaults to 10000)
+    server_port = int(os.environ.get("PORT", 7860))
+    demo.launch(mcp_server=True, server_name="0.0.0.0", server_port=server_port)
